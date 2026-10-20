@@ -106,12 +106,24 @@ public class listeningPianoScript : MonoBehaviour
         new Song { Name = "Worms", Speed = 500, Melody = "c2 d2 e4 g2 g2 g4 f2 e2 d3 c1 d2 e2 d2" },
         new Song { Name = "Always Look On The Bright Side Of Life", Speed = 540, Melody = "f4 f4 d2 f4 d2 f8 d3 c1 d3 f1" },
         new Song { Name = "99 Luftballons", Speed = 800, Melody = "g4 a2 f5 a5 g4 f2 d7 d3 bf2 bf5 bf5 bf4 bf4 a2 g2" },
+        new Song { Name = "We Didn’t Start The Fire", Speed = 320, Melody = "c2 c1 c1 d2 f1 g2 a5 d1 f1 g2 a1 g2 f1 d1 c1 g2 a1 g2 f1 d1" },
+        new Song { Name = "All My Loving", Speed = 350, Melody = "ef2 d2 c4 d2 ef1 f2 g5 a2 bf4 bf2 a1 g2 d1" },
+        new Song { Name = "Pippi Långstrump", Speed = 400, Melody = "c2 f2 a2 f2 g4 bf1 a1 g1 f1 e2 g2 c2 e2 f4 a1" },
+        new Song { Name = "I’m A Believer", Speed = 350, Melody = "c2 c2 c2 c2 d2 d2 f2 f2 e3 d1 c12 c2 c1 c3 c2 d2 d2 f2 f2 e1" },
+        new Song { Name = "The Final Countdown", Speed = 400, Melody = "g1 f1 g4 c7 af1 g1 af2 g2 f1" },
+        new Song { Name = "Streets of London", Speed = 350, Melody = "e2 e1 e3 g1 g2 g4 e1 d1 c6 d2 e2 e1" },
+        new Song { Name = "It’s Raining Tacos", Speed = 300, Melody = "f2 f2 g1 a2 c5 a1 g1 f1 g1 e1" },
+        new Song { Name = "William Tell Overture", Speed = 600, Melody = "c1 c1 c2 c1 c1 c2 c1 c1 f2 g2 a2 c1 c1 c2 c1 c1 f2 f1 a1 g2 e2 c1" },
+        new Song { Name = "Lifelines", Speed = 300, Melody = "gs1 gs1 gs1 f3 cs1 cs1 cs1 c3 gs3 f3 c1 c1 c1 cs1" },
+        new Song { Name = "American Pie", Speed = 280, Melody = "bf1 bf1 bf2 bf1 bf1 af2 af1 af1 g1 f1 ef1 f3 g1 f1 ef1 c1 ef1 c1 ef1 c1 c1 f1" },
+        new Song { Name = "Giana Sisters", Speed = 250, Melody = "f1 c1 g1 c1 af1 c1 g1 c1 f1 c1 bf1 c1 af1 c1 g1 c1" },
+        new Song { Name = "Can Somebody Tell Me Who I Am", Speed = 250, Melody = "bf1 a1 g1 f1 g2 f1 g2 a2 c1" },
+        new Song { Name = "Gravity Fall", Speed = 400, Melody = "d6 e2 f8 a3 g3 a2 c8 d6 e2 f4 e4 g4 a4 g4 f1" },
     };
     readonly int? DebugFixedSong = null;
 
     Song SelectedSong;
-    float delay;
-    float HalfDelay;
+    float NoteDelay;
     WaitForSeconds PrePlayDelay = new WaitForSeconds(0.2f);
     WaitForSeconds KeepSpinnersGoingFor = new WaitForSeconds(0.5f);
     WaitForSeconds PostPlayDelay = new WaitForSeconds(2f);
@@ -146,7 +158,7 @@ public class listeningPianoScript : MonoBehaviour
             key.OnInteract += delegate () { Keypress(key); return false; };
             key.OnInteractEnded += delegate () { Lift(key); };
         }
-        PlayButton.OnInteract += delegate () { ButtonPress(); return false; };
+        PlayButton.OnInteract += delegate () { PlayButtonPress(); return false; };
         PlayButton.OnInteractEnded += delegate () { LiftButton(); };
         Switch.OnInteract += delegate () { FlipSwitch(); return false; };
         Module.OnActivate += delegate ()
@@ -161,14 +173,13 @@ public class listeningPianoScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Stage = 1;
+        Stage = 0;
 
         //Choose a random song
         var selectedSongIndex = DebugFixedSong ?? UnityEngine.Random.Range(0, Songs.Length);
         SelectedSong = Songs[selectedSongIndex];
 
-        delay = 60f / SelectedSong.Speed;
-        HalfDelay = 60f / (2 * SelectedSong.Speed);
+        NoteDelay = 60f / SelectedSong.Speed;
         HighestNote = SelectedSong.Notes.Max(n => n.Pitch);
 
         //Choose how many semitones to transpose the player up. Add 1 to the bound because the upper bound is exclusive.
@@ -176,6 +187,7 @@ public class listeningPianoScript : MonoBehaviour
 
         var minAcceptableNote = SelectedSong.Notes[0].Pitch;
         var maxAcceptableNote = minAcceptableNote + 11 - HighestNote;
+        //Accidentals will always be of the form "C♯"
         Debug.Log($"[Listening Piano Keys #{moduleId}] The song is {SelectedSong.Name}, transposed up by {PlayerTransposeUp} semitones.");
         //Accidentals will always be of the form "C♯"
         Debug.Log($"[Listening Piano Keys #{moduleId}] Acceptable starting notes (inclusive): {_noteNames[minAcceptableNote][0]} - {_noteNames[maxAcceptableNote][0]}");
@@ -195,7 +207,7 @@ public class listeningPianoScript : MonoBehaviour
             //If the stage is 1 and the pressed note is one that puts the rest of the song within range
             var pressedPitch = int.Parse(key.name);
             var melodyFirstPitch = SelectedSong.Notes[0].Pitch;
-            if (Stage == 1 &&
+            if (Stage == 0 &&
                 pressedPitch >= melodyFirstPitch &&
                 pressedPitch <= melodyFirstPitch + 11 - HighestNote)
             {
@@ -211,7 +223,7 @@ public class listeningPianoScript : MonoBehaviour
                 Debug.Log($"[Listening Piano Keys #{moduleId}] First note pressed: {_noteNames[pressedPitch][0]}. With this, the correctly transposed melody is: {SelectedSong.Notes.Select(n => _noteNames[n.Pitch + PlayerToInputTranspose][0]).Join(" ")}.");
             }
             //If the first note pressed doesn't put the rest of the song within range
-            else if (Stage == 1)
+            else if (Stage == 0)
             {
                 //Strike
                 LogList.Clear();
@@ -304,7 +316,7 @@ public class listeningPianoScript : MonoBehaviour
         PlayButton.transform.localPosition = (currentPosition);
     }
 
-    void ButtonPress()
+    void PlayButtonPress()
     {
         PlayButton.AddInteractionPunch();
         Vector3 currentPosition = PlayButton.transform.localPosition;
@@ -316,8 +328,7 @@ public class listeningPianoScript : MonoBehaviour
             var selectedSongIndex = UnityEngine.Random.Range(0, Songs.Length);
             SelectedSong = Songs[selectedSongIndex];
 
-            delay = 60f / SelectedSong.Speed;
-            HalfDelay = 60f / (2 * SelectedSong.Speed);
+            NoteDelay = 60f / SelectedSong.Speed;
             HighestNote = SelectedSong.Notes.Max(n => n.Pitch);
 
             //Choose how many semitones to transpose the player up. Add 1 to the bound because the upper bound is exclusive.
@@ -346,7 +357,7 @@ public class listeningPianoScript : MonoBehaviour
         foreach (var note in song.Notes)
         {
             Audio.PlaySoundAtTransform((note.Pitch + transposeBy).ToString(), transform);
-            yield return new WaitForSeconds(delay * note.Length);
+            yield return new WaitForSeconds(NoteDelay * note.Length);
         }
         yield return KeepSpinnersGoingFor;
         Playing = false;
@@ -392,7 +403,7 @@ public class listeningPianoScript : MonoBehaviour
         {
             GetComponent<KMAudio>().PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, transform);
             switchMovement.SwitchState = !switchMovement.SwitchState;
-            Stage = 1;
+            Stage = 0;
         }
         else
         {
@@ -402,48 +413,83 @@ public class listeningPianoScript : MonoBehaviour
 
     private readonly string TwitchHelpMessage = @"!{0} play, !{0} p [Plays the tune] | !{0} toggle, !{0} t [Toggles the switch] | !{0} c cs d ef [Plays C, C♯, D, E♭] | !{0} 1 2 3 4 5 6 7 8 9 10 11 12 [Plays all twelve keys in order from left to right]";
 
-    IEnumerable<KMSelectable> ProcessTwitchCommand(string command)
+    IEnumerator ProcessTwitchCommand(string command)
     {
         Match m;
         if (Regex.IsMatch(command, @"^\s*(?:play|p)\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
-            return new[] { PlayButton };
+        {
+            yield return null;
+            yield return new[] { PlayButton };
+            yield break;
+        }
         if (Regex.IsMatch(command, @"^\s*(?:toggle|t)\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
-            return new[] { Switch };
+        {
+            yield return null;
+            yield return new[] { Switch };
+            yield break;
+        }
 
         // Try to parse a space-separated list of numbers or note names
-        var buttons = new List<KMSelectable>();
+        var notes = new List<Note>();
         var regex = $@"^\s*\b([1-9]|1[0-2]|{_noteNames.Select(n => n.Join("|")).Join("|")})\b\s*";
         int notePitch;
-        while ((m = Regex.Match(command, regex)).Success)
+        var curStage = Stage;
+        var transposition = Stage > 0 ? PlayerToInputTranspose : (int?) null;
+        while ((m = Regex.Match(command, regex, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)).Success)
         {
-            if (int.TryParse(m.Groups[1].Value, out notePitch))
-                buttons.Add(PianoKeys[notePitch - 1]);
-            else if ((notePitch = _noteNames.IndexOf(n => n.Contains(m.Groups[1].Value))) >= 0)
-                buttons.Add(PianoKeys[notePitch - 1]);
+            // User types 1–12; indexes in ‘_noteNames’ are 0–11 so add one to make it match
+            if (int.TryParse(m.Groups[1].Value, out notePitch) || (notePitch = _noteNames.IndexOf(n => n.Contains(m.Groups[1].Value, StringComparer.InvariantCultureIgnoreCase)) + 1) >= 1)
+            {
+                // Subtract 1 again to bring notePitch back into range 0–11
+                notePitch--;
+                notes.Add(transposition == null || (curStage < SelectedSong.Notes.Length && SelectedSong.Notes[curStage].Pitch + transposition.Value == notePitch)
+                    // Correct according to current melody: adhere to the note length
+                    ? new Note { Pitch = notePitch, Length = SelectedSong.Notes[curStage].Length }
+                    // Wrong note: will strike when played, so length doesn’t matter
+                    : new Note { Pitch = notePitch, Length = 1 });
+                if (transposition == null)
+                    transposition = notePitch - SelectedSong.Notes[curStage].Pitch;
+                curStage++;
+            }
             else
-                return null;
+                yield break;
             command = command.Substring(m.Length);
         }
         // If there is any other stuff in the command, reject it because it’s not simply a list of numbers
-        if (command.Length == 0 && buttons.Count > 0)
-            return buttons;
-        return null;
+        if (command.Length != 0 || notes.Count <= 0)
+            yield break;
+
+        yield return null;
+        foreach (var note in notes)
+        {
+            PianoKeys[note.Pitch].OnInteract();
+            yield return new WaitForSeconds(NoteDelay / 2);
+            PianoKeys[note.Pitch].OnInteractEnded();
+            yield return new WaitForSeconds(NoteDelay * (note.Length - 0.5f));
+        }
     }
 
     IEnumerator TwitchHandleForcedSolve()
     {
         yield return null;
-        switchMovement.SwitchState = true;
-        Stage = 1;
-        yield return null;
-        for (var i = 1; i < SelectedSong.Notes.Length; i++)
+        if (moduleSolved)
+            yield break;
+        if (!switchMovement.SwitchState)
         {
-            var note = SelectedSong.Notes[i];
-            PianoKeys[note.Pitch].OnInteract();
-            yield return HalfDelay;
-            PianoKeys[note.Pitch].OnInteractEnded();
-            for (var j = 1; j < note.Length; j++)
-                yield return HalfDelay;
+            Switch.OnInteract();
+            yield return new WaitForSeconds(.5f);
+        }
+
+        if (Stage == 0)
+            PlayerToInputTranspose = 0;
+
+        while (!moduleSolved)
+        {
+            var note = SelectedSong.Notes[Stage];
+            PianoKeys[note.Pitch + PlayerToInputTranspose].OnInteract();
+            yield return new WaitForSeconds(NoteDelay / 2);
+            PianoKeys[note.Pitch + PlayerToInputTranspose].OnInteractEnded();
+            yield return new WaitForSeconds(NoteDelay * (note.Length - 0.5f));
         }
         foreach (KMSelectable key in PianoKeys)
             Lift(key);
