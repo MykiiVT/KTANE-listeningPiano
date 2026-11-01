@@ -3413,7 +3413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/Diffuse
 --- !u!114 &114110968329081440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3465,7 +3465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114194170134483072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3587,7 +3587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114294273599217586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3614,7 +3614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114314478452369150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3649,7 +3649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114333290582180072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3734,7 +3734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114438715875364694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3805,7 +3805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114523299721556356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3956,7 +3956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114657760858615766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4061,7 +4061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114789804637443976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4096,7 +4096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114812550107676554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4170,7 +4170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114852242372033486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4183,7 +4183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114854008495439582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4322,7 +4322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - Standard
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114985412433810322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4370,69 +4370,8 @@ MonoBehaviour:
   - {fileID: 4551073619085616}
   Labels: {fileID: 1667103780152322}
   switchMovement: {fileID: 114333290582180072}
-  moduleId: 0
-  SongNames:
-  - Frosty the Snowman
-  - Tetris
-  - Still Alive(Radio Mix)
-  - Can Can
-  - Wait(KTANE OST)
-  - Fur Elise
-  - Spring(Vivaldi)
-  - Never Gonna Give You Up
-  - A Cruel Angel's Thesis(Evangelion)
-  - It's Been So Long(The Living Tombstone)
-  - Happy Birthday
-  - Billie Jean
-  - Despacito
-  - Blue(Da Ba Dee)
-  - Among Us(Trap Remix)
-  - Hello(OMFG)
-  - Axel F
-  - Unity(TheFatRat)
-  - In the Hall of the Mountain King
-  - Buddy Holly
-  - Ode to Joy
-  - Victory Jingle(KTANE)
-  - The Fox(Ylvis)
-  - Radetzky March
-  - Steamboat Bill
-  - Theme from "The Amazing Digital Circus"
-  - Gangsta's Paradise
-  - Barbie Girl
-  - Whistle
-  - Giorno's Theme
-  - Crab Rave
-  - Super Idol
-  - Bones
-  - All Star
-  - Twinkle Twinkle Little Star
-  - Party in the USA
-  - Bad Guy
-  - APT.
-  - Toxic
-  - Blinding Lights
   Playing: 0
-  PianoSounds:
-  - {fileID: 8300000, guid: d6c4e86f043dfd546a5f0470cf776b9d, type: 3}
-  - {fileID: 8300000, guid: 0191c7128d48b784dbb36ae0ea2c80b2, type: 3}
-  - {fileID: 8300000, guid: 3cc3c79eff8bb7e40bd66e317ca69d4e, type: 3}
-  - {fileID: 8300000, guid: df50e3ed331d9cc488844686ea40b256, type: 3}
-  - {fileID: 8300000, guid: bec4b02d4da5a8943952a42c2840f53f, type: 3}
-  - {fileID: 8300000, guid: 5509873e80143f843b68ea96b579beee, type: 3}
-  - {fileID: 8300000, guid: ac4947519d17ac848a456632b58a0f8f, type: 3}
-  - {fileID: 8300000, guid: 8a703d92f7c61624698c9a48a4ab646b, type: 3}
-  - {fileID: 8300000, guid: 9980c94bded047b4e8c5f16516cd0a0f, type: 3}
-  - {fileID: 8300000, guid: fe301130a590c844abee5a541ddd679d, type: 3}
-  - {fileID: 8300000, guid: be2c7e3c4d5162c4cbf149afdff82dcc, type: 3}
-  - {fileID: 8300000, guid: f83bd894f251fc649b5a8bc630bc0ef7, type: 3}
-  SouvenirNamesList:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  moduleId: 0
 --- !u!114 &114999033713797118
 MonoBehaviour:
   m_ObjectHideFlags: 1

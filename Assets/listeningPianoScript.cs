@@ -59,9 +59,9 @@ public class listeningPianoScript : MonoBehaviour
     {
         new Song { Name = "Frosty the Snowman", Speed = 400, Melody = "ef4 c3 df1 ef2 af4 g1 af1 bf2 af2 g2 f2 ef1" },
         new Song { Name = "Tetris", Speed = 300, Melody = "g2 d1 ef1 f2 ef1 d1 c2 c1 ef1 g1" },
-        new Song { Name = "Still Alive (Radio Mix)", Speed = 480, Melody = "bf1 a2 g3 a10 bf1 a2 g3 a2 f2 g1 c1" },
+        new Song { Name = "Still Alive (Radio Mix)", Speed = 480, Melody = "bf1 a1 g1 g3 a10 bf1 a1 g1 g3 a2 f2 g1 c1" },
         new Song { Name = "Can Can", Speed = 300, Melody = "c4 d1 f1 e1 d1 g2 g2 g1 a1 e1 f1 d2 d1" },
-        new Song { Name = "Wait (KTANE OST)", Speed = 260, Melody = "c2 g1 c1 c1 ef1 e1 f2 a2 ef1 f1 ef1 f1 ef1" },
+        new Song { Name = "Wait (KTANE OST)", Speed = 260, Melody = "c2 c1 ds1 as1 gs1 g1 f2 as1 gs1 g1 f1 ds1 f2 c2 d1 ds1 g1 gs2 g1" },
         new Song { Name = "Fur Elise", Speed = 240, Melody = "g1 gf1 g1 gf1 g1 d1 f1 ef1 c1" },
         new Song { Name = "Spring (Vivaldi)", Speed = 480, Melody = "e2 e2 e2 d1 c1 g6 g1 f1 e2 e2 e2 d1 c1 g1" },
         new Song { Name = "Never Gonna Give You Up", Speed = 480, Melody = "c1 d1 f1 d1 a3 a3 g6 c1 d1 e1 c1 g3 g3 f1" },
@@ -78,11 +78,10 @@ public class listeningPianoScript : MonoBehaviour
         new Song { Name = "In the Hall of the Mountain King", Speed = 240, Melody = "c1 d1 ef1 f1 g1 ef1 g2 gf1 d1 gf2 f1 df1 f1" },
         new Song { Name = "Buddy Holly", Speed = 240, Melody = "f1 df1 f1 g1 a1 g1 f1 df1 c1" },
         new Song { Name = "Ode to Joy", Speed = 280, Melody = "e2 e2 f2 g2 g2 f2 e2 d2 c2 c2 d2 e2 e3 d1 d1" },
-        new Song { Name = "Victory Jingle (KTANE)", Speed = 460, Melody = "d1 c1 d1 f3 g1 f1 g1 a3 c2 df2 d1" },
         new Song { Name = "The Fox (Ylvis)", Speed = 256, Melody = "g1 c2 ef1 f2 bf1 g2 c2 ef1 f2 g1 c1" },
         new Song { Name = "Radetzky March", Speed = 440, Melody = "e1 ef1 e2 e1 ef1 e2 e1 ef1 e2 d2 c2 e1 ef1 e2 e1 ef1 e2 e1 ef1 e2 a2 g2" },
         new Song { Name = "Steamboat Bill", Speed = 360, Melody = "ef1 e2 c2 d2 ef1 e1 ef1 e1 ef1 e1 g1" },
-        new Song { Name = "Theme from “The Amazing Digital Circus”", Speed = 460, Melody = "c1 df1 d8 a2 gf2 gf2 e2 d8 a2 gf2 gf2 e1 f1 gf1" },
+        new Song { Name = "Theme From “The Amazing Digital Circus”", Speed = 460, Melody = "c1 df1 d8 a2 gf2 gf2 e2 d8 a2 gf2 gf2 e1 f1 gf1" },
         new Song { Name = "Gangsta’s Paradise", Speed = 360, Melody = "f1 af2 af2 af1 g2 f2 f3 f1 f1 e2 c1 g2 af3 g1 f1 ef1 f1" },
         new Song { Name = "Barbie Girl", Speed = 260, Melody = "f1 df1 f1 bf1 gf4 ef1 c1 ef1 af1 f2 ef1 df1" },
         new Song { Name = "Whistle", Speed = 420, Melody = "a2 g2 e2 g1 e9 e2 d2 c2 d1 e1" },
@@ -102,23 +101,46 @@ public class listeningPianoScript : MonoBehaviour
         new Song { Name = "The Wild Rover", Speed = 300, Melody = "f2 f3 g1 f2 d2 c2 a2 a1 g3 a2 bf1" },
         new Song { Name = "I Can See Clearly Now The Rain Is Gone", Speed = 300, Melody = "f1 g1 a1 bf3 a1 g3 f1 a2 f2 c1" },
         new Song { Name = "Duck Tales", Speed = 375, Melody = "c2 e2 g2 a2 bf2 bf1 a2 g1 f2 f3 e5 f3 e1" },
-        new Song { Name = "Circle of Life", Speed = 200, Melody = "d1 ef1 f1 f1 f1 f2 f1 g1 f2 ef6 c1 ef1 ef2 ef1 ef1 g2 f1 d1" },
+        new Song { Name = "Circle of Life", Speed = 200, Melody = "d1 ef1 f1 f1 f1 f2 f1 g1 f2 ef5 c1 d1 ef2 ef1 ef1 ef1 g2 f1 d1" },
         new Song { Name = "Worms", Speed = 500, Melody = "c2 d2 e4 g2 g2 g4 f2 e2 d3 c1 d2 e2 d2" },
-        new Song { Name = "Always Look On The Bright Side Of Life", Speed = 540, Melody = "f4 f4 d2 f4 d2 f8 d3 c1 d3 f1" },
-        new Song { Name = "99 Luftballons", Speed = 800, Melody = "g4 a2 f5 a5 g4 f2 d7 d3 bf2 bf5 bf5 bf4 bf4 a2 g2" },
-        new Song { Name = "We Didn’t Start The Fire", Speed = 320, Melody = "c2 c1 c1 d2 f1 g2 a5 d1 f1 g2 a1 g2 f1 d1 c1 g2 a1 g2 f1 d1" },
+        new Song { Name = "Always Look On The Bright Side Of Life", Speed = 450, Melody = "bf5 bf1 g5 d1 c2 d1 ef2 g1 f1" },
+        new Song { Name = "99 Luftballons", Speed = 380, Melody = "g2 a1 f3 a2 g2 f1 d5 bf1 bf2 bf3 bf2 bf1 a2 g3 f1" },
+        new Song { Name = "We Didn’t Start The Fire", Speed = 320, Melody = "c2 c1 c1 d2 f1 g2 a5 d1 f1 g2 a1 g2 f1 d1 c1 g2 a1 g2 f1" },
         new Song { Name = "All My Loving", Speed = 350, Melody = "ef2 d2 c4 d2 ef1 f2 g5 a2 bf4 bf2 a1 g2 d1" },
-        new Song { Name = "Pippi Långstrump", Speed = 400, Melody = "c2 f2 a2 f2 g4 bf1 a1 g1 f1 e2 g2 c2 e2 f4 a1" },
-        new Song { Name = "I’m A Believer", Speed = 350, Melody = "c2 c2 c2 c2 d2 d2 f2 f2 e3 d1 c12 c2 c1 c3 c2 d2 d2 f2 f2 e1" },
-        new Song { Name = "The Final Countdown", Speed = 400, Melody = "g1 f1 g4 c7 af1 g1 af2 g2 f1" },
-        new Song { Name = "Streets of London", Speed = 350, Melody = "e2 e1 e3 g1 g2 g4 e1 d1 c6 d2 e2 e1" },
-        new Song { Name = "It’s Raining Tacos", Speed = 300, Melody = "f2 f2 g1 a2 c5 a1 g1 f1 g1 e1" },
-        new Song { Name = "William Tell Overture", Speed = 600, Melody = "c1 c1 c2 c1 c1 c2 c1 c1 f2 g2 a2 c1 c1 c2 c1 c1 f2 f1 a1 g2 e2 c1" },
-        new Song { Name = "Lifelines", Speed = 300, Melody = "gs1 gs1 gs1 f3 cs1 cs1 cs1 c3 gs3 f3 c1 c1 c1 cs1" },
+        new Song { Name = "Pippi Långstrumpf", Speed = 400, Melody = "c2 f2 a2 f2 g4 bf1 a1 g1 f1 e2 g2 c2 e2 f4 a1" },
+        new Song { Name = "I’m A Believer", Speed = 350, Melody = "c2 c2 c2 c2 d2 d2 f2 f2 e3 d1 c12 c2 c1 c2 c2 d2 d2 f2 f3 e1" },
+        new Song { Name = "The Final Countdown", Speed = 400, Melody = "g1 f1 g4 c10 af1 g1 af2 g2 f1" },
+        new Song { Name = "Streets of London", Speed = 350, Melody = "e2 e1 e3 g1 g2 g5 e1 d1 c4 d1 e2 e2 e1" },
+        new Song { Name = "It’s Raining Tacos", Speed = 300, Melody = "f2 f2 g1 a2 c6 a1 g1 f1 g1 e1" },
+        new Song { Name = "William Tell Overture", Speed = 600, Melody = "c1 c1 c2 c1 c1 c2 c1 c1 f2 g2 a2 c1 c1 c2 c1 c1 f2 a2 g2 e2 c1" },
+        new Song { Name = "Lifelines", Speed = 300, Melody = "gs1 gs1 gs1 f5 cs1 cs1 cs1 c5 gs3 f5 c1 c1 c1 cs1" },
         new Song { Name = "American Pie", Speed = 280, Melody = "bf1 bf1 bf2 bf1 bf1 af2 af1 af1 g1 f1 ef1 f3 g1 f1 ef1 c1 ef1 c1 ef1 c1 c1 f1" },
-        new Song { Name = "Giana Sisters", Speed = 250, Melody = "f1 c1 g1 c1 af1 c1 g1 c1 f1 c1 bf1 c1 af1 c1 g1 c1" },
+        new Song { Name = "Title Theme From “The Great Giana Sisters”", Speed = 250, Melody = "f1 c1 g1 c1 af1 c1 g1 c1 f1 c1 bf1 c1 af1 c1 g1 c1" },
         new Song { Name = "Can Somebody Tell Me Who I Am", Speed = 250, Melody = "bf1 a1 g1 f1 g2 f1 g2 a2 c1" },
-        new Song { Name = "Gravity Fall", Speed = 400, Melody = "d6 e2 f8 a3 g3 a2 c8 d6 e2 f4 e4 g4 a4 g4 f1" },
+        new Song { Name = "Gravity Falls", Speed = 400, Melody = "d6 e2 f8 a3 g3 a2 c8 d6 e2 f4 e4 g4 a4 g4 f1" },
+        new Song { Name = "Rasputin", Speed = 270, Melody = "gs2 gs2 fs1 fs1 fs2 f1 f1 f1 f1 ds1 cs1 c3 fs1 fs1 fs1 f2 f2 ds1 ds1 cs1 ds1"},
+        new Song { Name = "Wonderwall", Speed = 320, Melody = "e1 g1 e1 g3 g1 a2 g2 d2 c3 d3 c1 d1 e2 c1"},
+        new Song { Name = "Toreador March", Speed = 450, Melody = "g2 g1 g1 g1 d1 c1 d1 g2 g1 g1 g1 a1 b1 a1 g2 g1 g1 a1 g1 fs1 g1 a1"},
+        new Song { Name = "Toreador March(iconic section to FNAF)", Speed = 400, Melody = "f3 g2 f1 d3 d3 d2 c1 d2 ds1 d6 ds3 c2 f1 d1"},
+        new Song { Name = "The Trout", Speed = 400, Melody = "cs2 fs2 fs2 as2 as2 fs4 cs2 fs2 f2 ds1 f1 fs2 c2 cs1"},
+        new Song { Name = "Piano Man", Speed = 320, Melody = "g1 af1 bf2 bf2 bf2 bf2 af2 g2 af1 g1 ef9 c1 c2 ef2 ef2 af1 g3 ef2 ef1"},
+        new Song { Name = "Turkish March", Speed = 450, Melody = "ds1 cs1 c1 cs1 e4 fs1 e1 ds1 e1 gs1"},
+        new Song { Name = "Hungarian Dance", Speed = 500, Melody = "c6 f2 gs6 f2 e6 f1 g1 f1"},
+        new Song { Name = "Funky Town", Speed = 250, Melody = "f1 f1 ef1 f2 c2 c1 f1 bf1 a1 f1"},
+        new Song { Name = "Don't Stop Believin'", Speed = 250, Melody = "g1 ef1 f1 f2 g9 c1 ef1 ef1 ef1 bf2 bf1 g2 f1"},
+        new Song { Name = "Monkeys Spinning Monkeys", Speed = 300, Melody = "e2 f1 fs2 f2 ds1 e2 c1 cs1"},
+        new Song { Name = "La de da de da de da de day oh", Speed = 400, Melody = "f2 g1 f3 d2 g3 f1 ef2 d4 c4 gf3 g1 a2 bf1"},
+        new Song { Name = "Toccata & Fugue but NOT in D minor", Speed = 500, Melody = "gs1 fs1 gs10 fs1 e1 ds1 cs1 c6 cs1"},
+        new Song { Name = "Dragostea Din Tei", Speed = 270, Melody = "af2 g1 af3 f2 f1 g1 f1 ef1 c1"},
+        new Song { Name = "Theme From “Thomas The Tank Engine”", Speed = 400, Melody = "d2 e2 fs2 g4 a2 b4 ds16 e2 c2 e2 d9 ds1 e2 c2 c2 e1 d1"},
+        new Song { Name = "A Thousand Miles", Speed = 400, Melody = "d2 d3 ef3 bf8 d2 d3 ef3 c8 d2 d3 ef3 bf8 d2 d3 ef3 ef1"},
+        new Song { Name = "DRAGON (KTANE OST)", Speed = 400, Melody = "f2 d2 e2 c2 d2 e2 cs2 d2 f2 d2 e2 c2 d2 e2 cs2 d2"},
+        new Song { Name = "Running In the '90s", Speed = 300, Melody = "b2 a2 gs2 gs2 fs2 fs1 fs2 e5 cs1 e1 fs2 fs1 e1 fs2 b1 gs1"},
+        new Song { Name = "and the day goes on", Speed = 450, Melody = "e1 g1 a3 g3 e1 d1 c4 f4 e4 d4 c4 f4 e6 d1 c1 d3 e3 c6"},
+        new Song { Name = "Sweden (From Minecraft Volume Alpha)", Speed = 180, Melody = "a2 b2 fs6 d1 e1 cs6 fs1 a1 e8"},
+        new Song { Name = "Cogwork Dancers (Silksong OST)", Speed = 240, Melody = "g2 c2 d2 ds2 f4 f2 g1 gs1 g2 c2 d2 ds2 f4"},
+        new Song { Name = "Theme From “Wallace & Gromit”", Speed = 250, Melody = "f2 ef1 d1 f2 ef1 d1 f1 c7 g1 f1 g1 a2 g1 f1 ef1 d1"},
+        new Song { Name = "Don't Forget", Speed = 350, Melody = "a1 g1 f6 c2 a2 bf2 g3 f1 f1"}
     };
     readonly int? DebugFixedSong = null;
 
@@ -144,9 +166,6 @@ public class listeningPianoScript : MonoBehaviour
     private Coroutine playSongCoroutine;
     readonly bool TwitchPlaysActive;
     readonly List<int> LogList = new List<int>();
-
-    //For Souvenir
-    public AudioClip[] PianoSounds;
 
     void Awake()
     {
@@ -204,7 +223,7 @@ public class listeningPianoScript : MonoBehaviour
         //If Submit mode is on and the module is not yet solved
         if (switchMovement.SwitchState & moduleSolved == false)
         {
-            //If the stage is 1 and the pressed note is one that puts the rest of the song within range
+            //If the stage is 0 and the pressed note is one that puts the rest of the song within range
             var pressedPitch = int.Parse(key.name);
             var melodyFirstPitch = SelectedSong.Notes[0].Pitch;
             if (Stage == 0 &&
@@ -217,9 +236,8 @@ public class listeningPianoScript : MonoBehaviour
                 //Calculate how many semitones up the defuser is playing the melody
                 PlayerToInputTranspose = pressedPitch - melodyFirstPitch;
                 Stage++;
-                while (Stage < SelectedSong.Notes.Length && SelectedSong.Notes[Stage].Pitch - PlayerToInputTranspose == pressedPitch)
+                while (Stage < SelectedSong.Notes.Length && (SelectedSong.Notes[Stage].Pitch + PlayerToInputTranspose == pressedPitch))
                     Stage++;
-
                 Debug.Log($"[Listening Piano Keys #{moduleId}] First note pressed: {_noteNames[pressedPitch][0]}. With this, the correctly transposed melody is: {SelectedSong.Notes.Select(n => _noteNames[n.Pitch + PlayerToInputTranspose][0]).Join(" ")}.");
             }
             //If the first note pressed doesn't put the rest of the song within range
@@ -279,7 +297,7 @@ public class listeningPianoScript : MonoBehaviour
                             Lift(pianokey);
                         }
                         LogList.Add(pressedPitch);
-                        Debug.Log($"[Listening Piano Keys #{moduleId}] Played an incorrect note. Striking and reselecting song.\nPlayed notes (incorrect): {LogList.Join(", ")}");
+                        Debug.Log($"[Listening Piano Keys #{moduleId}] Played an incorrect note. Striking and reselecting song.\nPlayed notes (incorrect): {LogList.Join(", ")}\nCorrect note: {CorrectPitch}");
                         LogList.Clear();
                         GetComponent<KMBombModule>().HandleStrike();
                         Start();
@@ -351,13 +369,16 @@ public class listeningPianoScript : MonoBehaviour
         Audio.PlaySoundAtTransform("ListeningTapePlay", transform);
 
         yield return PrePlayDelay;
+        //Have to transfer NoteDelay to a local variable here because striking calls Start(), which messes with the tempo
+        //So otherwise the tempo would change mid-play if the user strikes while the song is playing
+        float thisNoteDelay = NoteDelay;
 
         Playing = true;
         StartCoroutine(SpinRoutine());
         foreach (var note in song.Notes)
         {
             Audio.PlaySoundAtTransform((note.Pitch + transposeBy).ToString(), transform);
-            yield return new WaitForSeconds(NoteDelay * note.Length);
+            yield return new WaitForSeconds(thisNoteDelay * note.Length);
         }
         yield return KeepSpinnersGoingFor;
         Playing = false;
@@ -435,6 +456,7 @@ public class listeningPianoScript : MonoBehaviour
         int notePitch;
         var curStage = Stage;
         var transposition = Stage > 0 ? PlayerToInputTranspose : (int?) null;
+        int? prevnotePitch = null;
         while ((m = Regex.Match(command, regex, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)).Success)
         {
             // User types 1–12; indexes in ‘_noteNames’ are 0–11 so add one to make it match
@@ -442,14 +464,26 @@ public class listeningPianoScript : MonoBehaviour
             {
                 // Subtract 1 again to bring notePitch back into range 0–11
                 notePitch--;
-                notes.Add(transposition == null || (curStage < SelectedSong.Notes.Length && SelectedSong.Notes[curStage].Pitch + transposition.Value == notePitch)
-                    // Correct according to current melody: adhere to the note length
-                    ? new Note { Pitch = notePitch, Length = SelectedSong.Notes[curStage].Length }
-                    // Wrong note: will strike when played, so length doesn’t matter
-                    : new Note { Pitch = notePitch, Length = 1 });
+                
                 if (transposition == null)
                     transposition = notePitch - SelectedSong.Notes[curStage].Pitch;
-                curStage++;
+
+                if((transposition == null || (curStage < SelectedSong.Notes.Length && SelectedSong.Notes[curStage].Pitch + transposition.Value == notePitch)) && notePitch != prevnotePitch)
+                {
+                    notes.Add(new Note { Pitch = notePitch, Length = SelectedSong.Notes[curStage].Length });
+                    int holdPitch = notePitch;
+                    curStage++;
+                    while(curStage < SelectedSong.Notes.Length && SelectedSong.Notes[curStage].Pitch + transposition.Value == holdPitch)
+                    {
+                        notes.Add(new Note{Pitch = notePitch, Length = SelectedSong.Notes[curStage].Length });
+                        curStage++;
+                    }
+                }
+                else if(notePitch != prevnotePitch)
+                {
+                    notes.Add(new Note { Pitch = notePitch, Length = 1 });
+                }
+                prevnotePitch = notePitch;
             }
             else
                 yield break;
@@ -482,14 +516,18 @@ public class listeningPianoScript : MonoBehaviour
 
         if (Stage == 0)
             PlayerToInputTranspose = 0;
-
+        
+        //Need to use a variable other than Stage here to track the place in the array because Stage skips all repeated notes
+        int place = Stage;
         while (!moduleSolved)
         {
-            var note = SelectedSong.Notes[Stage];
+            
+            var note = SelectedSong.Notes[place];
             PianoKeys[note.Pitch + PlayerToInputTranspose].OnInteract();
             yield return new WaitForSeconds(NoteDelay / 2);
             PianoKeys[note.Pitch + PlayerToInputTranspose].OnInteractEnded();
             yield return new WaitForSeconds(NoteDelay * (note.Length - 0.5f));
+            place++;
         }
         foreach (KMSelectable key in PianoKeys)
             Lift(key);
