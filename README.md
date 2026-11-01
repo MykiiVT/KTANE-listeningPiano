@@ -18,5 +18,4 @@ Notes:
 - The keyboard only has a range of 12 semitones, and I ask that you please only submit songs that fit and make no octave compromises.
 - Please ensure all submitted songs are at least fairly well-known by the general public.
 
-Thank uu :0
-\- Myki
+Thank uu :0\n\- Myki
