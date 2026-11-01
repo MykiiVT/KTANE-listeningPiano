@@ -17,9 +17,13 @@ MonoBehaviour:
   description: "Listening Piano Keys 1.1\nForgot to look at the music? Guess you'll
     have to play it by ear.\r\n\r\nPlay a familiar melody by ear.\r\n\r\nModule ID:
     listeningPiano\r\n\r\nCode overhaul by Timwi\nPiano Keys assets by Bashly\r\nListening
-    assets by Perky\r\nRemixed by MykiiVT\r\n\r\nManual available here: https://ktane.timwi.de/HTML/Listening%20Piano%20Keys.html\r\n\r\nPlease
+    assets by Perky\r\nOriginal code by MykiiVT\r\n\r\nManual available here: https://ktane.timwi.de/HTML/Listening%20Piano%20Keys.html\r\n\r\nPlease
     let me know about any bugs on discord at mykiivt :)\r\n\r\nSupports:\r\n- TP\r\n-
-    LFA\r\n---\r\nBuild 1.0 notes:\r\n- Initial release"
+    LFA\r\n---\r\nBuild 1.0 notes:\r\n- Initial release\n\nBuild 1.1 notes:\n- Now
+    easier and more cohesive to add new songs(Thanks Timwi!)\n- Added ~60 new songs
+    with the help of Timwi, thunder and other fellow community members\n- *Removed*
+    Souvenir support(Solo module)\n- Removed Victory Jingle because it was incorrect,
+    and the correct tune doesn't sit nicely within the range"
   version: 1.0
   outputFolder: build
   debugBuild: 1
