@@ -1,9 +1,19 @@
-Community fork of the KTaNE Modkit.
+You can now submit your own melodies! Here's how:
 
-The [original (official) modkit](https://github.com/keeptalkinggame/ktanemodkit) isn't going to receive updates anymore. This is the fork that will be maintained from now on.
+The list of songs is in `Assets` > `listeningPianoScript.cs`, beginning on line 58.
 
-Community-made plugins can be installed at the `Keep Talking ModKit > Plugins` menupoint.
+Each song is listed with 3 fields: a "Name", a "Speed" and a "Melody".
 
-[Documentation](https://github.com/Qkrisi/ktanemodkit/wiki)
+The name of your song goes in "Name".
 
-To get more help, join the [Keep Talking and Nobody Explodes](https://discord.gg/ktane) or the [KTaNE Modding](https://discord.gg/qzy7Gdz) Discord servers.
+The melody goes in "Melody", where each note is written as a pitch(in any form that appears in line 21) and a length(in the form of an integer), and the notes are separated by spaces.
+
+You can define a tempo in "Speed", which is just the rate at which a note of length 1 played repeatedly would be played at, in BPM.
+
+Once you're happy, just shoot me a pull request :)
+
+**IMPORTANT: Please ensure that you notate all songs in the *lowest* possible key, meaning the note C must appear at least once. Otherwise your song will break the module.**
+
+Notes:
+- The keyboard only has a range of 12 semitones, and I ask that you please only submit songs that fit and make no octave compromises.
+- Please ensure all submitted songs are at least fairly well-known by the general public.
